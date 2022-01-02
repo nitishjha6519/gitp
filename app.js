@@ -1,8 +1,10 @@
 const express=require("express");
 const mongoose=require("mongoose");
 const bodyParser= require("body-parser");
+require('dotenv').config();
+const URL = process.env.DATABASE_URL;
 
-mongoose.connect("mongodb+srv://njz-admin:MongoTest@cluster0.8csos.mongodb.net/collabShipDB");
+mongoose.connect(URL);
 
 
 const collabShipSchema= new mongoose.Schema({
@@ -69,14 +71,14 @@ app.post("/apply", function(req,res){
 		if(!err){
 			res.render("welcome");
              console.log("successfully inserted to DB");
-			console.log("The err causing long time response from heroku hence causing H12 ");
 
 
 		}
 		else{
 			
 			 
-             console.log("Error occurred");
+             console.log(err);
+          	console.log("The err causing long time response from heroku hence causing H12 ");
 
 			
 			
