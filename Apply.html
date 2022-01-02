@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Apply-collabship</title>
+	<style type="text/css">
+		
+body{
+
+	background-color: #f4f4f4;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 1.6em;
+	margin: 0;
+	height: 100%;
+}
+.container{
+	width:80%;
+	margin: auto;
+	overflow: hidden;
+}
+
+header{
+	background-color: #35424a;
+	color: #fff;
+	min-height: 45px;
+	padding-top: 20px;
+	border-bottom: 3px solid coral;
+	margin-bottom: 50px;
+}
+
+header ul{
+	margin:0;
+	padding:0;
+}
+
+
+header li{
+	display: inline;
+	list-style: none;
+	padding:0 15px 0 15px ;
+
+
+}
+
+header a{
+	color: #fff;
+	text-decoration: none;
+}
+
+header h2{
+	float: left;
+}
+
+
+header nav{
+	float:right;
+}
+
+header h2{
+	margin: 0;
+}
+.coral{
+	color:coral;
+}
+ footer{
+        	background-color:  #e0401c;
+        	color: #fff;
+        	padding: 15px;
+        	margin-top: 20px;
+        	text-align: center;
+        	position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem
+        }
+
+        @media(max-width: 768px){
+
+        	header h2,
+        	header nav,
+         {
+               float: none;
+               width:100%;
+        	}
+
+            header h2{
+            	padding:5px;
+            }
+            
+            header nav{
+            	padding: 5px;
+            }
+
+      
+        }
+
+	</style>
+</head>
+<body>
+
+<header>
+		<div class="container">
+			<h2 > <span class="coral">Apply</span> collabship.org</h2>
+				<nav>
+					<ul class="my-list">
+						<li >
+							<a class="coral" href="#"> HOME</a>
+						</li>
+						
+						
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+
+	<center>
+<form action="/apply" method="post">
+	
+<label for="name">Name:</label><br>
+  <input type="text" id="name" name="name" value=""><br> <br>
+
+  <!-- <label for="developer"> Developer:</label> <br>
+<select id="developer">
+  <option value="Frontend">Frontend</option>
+  <option value="Backend">Backend</option>
+  
+</select> <br><br>
+
+<label for="webTech">Web Technology :</label> <br>
+<select id="webTech">
+  <option value="HTML/CSS">HTML/CSS</option>
+  <option value="Vanilla_Javascript">Vanilla Javascript</option>
+  <option value="NodeJS/Express/EJS">NodeJS/Express</option>
+  <option value="ReactJS">ReactJS</option>
+</select> <br><br> -->
+  
+  <label for="gitProfile">Github Profile Link:</label><br>
+  <input type="text" id="gitProfile" name="gitProfile" value=""><br><br>
+  <input type="submit" value="Submit">
+
+  </form>
+  </center>
+<footer id="main-footer">
+			<p> Copyright &copy; 2021 Collabship.org</p>
+		</footer>
+
+</body>
+</html>

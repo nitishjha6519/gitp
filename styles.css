@@ -1,0 +1,93 @@
+
+
+body * {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	
+}
+html{
+	height: 100%;
+}
+
+body{
+	min-height: 100%;
+	color: white;
+	background-color: #dee1e8;
+	
+
+}
+#header{
+	height:250px;
+	background-image: url("https://images.unsplash.com/photo-1467810563316-b5476525c0f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80");
+	background-repeat: no-repeat;
+	color: #fff;
+	background-position: center;
+	clip-path: polygon(0 0, 28% 0, 55% 0, 84% 0, 85% 0, 100% 1%, 100% 85%, 82% 94%, 60% 99%, 35% 99%, 17% 94%, 0 87%);
+}
+#container{
+	position: relative;
+	bottom: 70px;
+
+}
+.boxes{
+
+	height: 100px;
+	width: 80%;
+	background-color: #07242c;
+	
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin: 13px auto;
+	border-radius: 10px;
+	display: grid;
+	grid-template-columns: repeat(10, 1fr); 
+	grid-column-gap: 15px;
+	border: 1px solid white;
+}
+
+
+.logo{
+	position: relative;
+	padding: 10px;
+	
+}
+img{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	object-fit: cover;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+
+
+}
+/*.bcclr{
+	background-color: red;
+}
+*/
+.title{
+	grid-column-start: 2;
+	grid-column-end: 5;
+
+	color: white;
+	font-family: nunito;
+	font-weight: 600;
+	font-size: 17px;
+	
+}
+
+.requirements{
+	grid-column-start: 6;
+	grid-column-end: 9;
+
+
+}
+.req_el{
+	display: inline-block;
+	border: 2px solid white;
+	padding: 10px;
+}
