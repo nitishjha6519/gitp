@@ -66,13 +66,17 @@ app.post("/apply", function(req,res){
 		gitProfile: req.body.gitProfile,
 	});
 	user.save(function(err){
-		if(err){
-			console.log("The err causing long time respponse from heroku hence causing H12 ");
+		if(!err){
+			res.render("welcome");
+             console.log("successfully inserted to DB");
+			console.log("The err causing long time response from heroku hence causing H12 ");
+
+
 		}
 		else{
 			
-			 res.render("welcome");
-             console.log("successfully inserted to DB");
+			 
+             console.log("Error occurred");
 
 			
 			
