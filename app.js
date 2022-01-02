@@ -4,8 +4,16 @@ const bodyParser= require("body-parser");
 require('dotenv').config();
 const URL = process.env.DATABASE_URL;
 
-mongoose.connect(URL);
-
+try{
+mongoose.connect(URL,{
+    useUnifiedTopology: true,
+    useNewUrlParser: true
+  });
+  console.log('MongoDB is Connected...');
+} catch (err) {
+  console.error(err);
+  process.exit(1);
+}
 
 const collabShipSchema= new mongoose.Schema({
 	projectName: String,
