@@ -67,7 +67,7 @@ app.post("/apply", function(req,res){
 	});
 	user.save(function(err){
 		if(err){
-			console.log(err);
+			console.log("The err causing long time respponse from heroku hence causing H12 ");
 		}
 		else{
 			
