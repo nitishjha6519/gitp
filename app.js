@@ -67,34 +67,49 @@ app.get("/apply", function(req,res,html){
 
 
 
-app.post("/apply", function(req,res){
-	var userName= req.body.name;
+try{
 
-
-	const user= new signups({
-		name: req.body.name,
-		gitProfile: req.body.gitProfile,
-	});
-	user.save(function(err){
-		if(!err){
-			res.render("welcome");
-             console.log("successfully inserted to DB");
-
-
-		}
-		else{
-			
-			 
-             console.log(err);
-          	console.log("The err causing long time response from heroku hence causing H12 ");
-
-			
-			
-		}
-	});
 	
 
-});
+	app.post("/apply", function(req,res){
+		var userName= req.body.name;
+
+
+		const user= new signups({
+			name: req.body.name,
+			gitProfile: req.body.gitProfile,
+		});
+		
+
+
+		user.save(function(err){
+			if(!err){
+				res.render("welcome");
+				console.log("successfully inserted to DB");
+
+
+			}
+			else{
+				
+				
+				console.log(err);
+				console.log("The err causing long time response from heroku hence causing H12 ");
+
+				
+				
+			}
+		});
+
+		
+
+	});
+}
+
+catch (err) {
+	console.error(err);
+	process.exit(1);
+}
+
 
 
 let port = process.env.PORT;
