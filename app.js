@@ -66,10 +66,9 @@ app.get("/apply", function(req,res,html){
 });
 
 
+const postData= async function(){
 
-try{
-
-	
+// try{
 
 	app.post("/apply", function(req,res){
 		var userName= req.body.name;
@@ -79,36 +78,30 @@ try{
 			name: req.body.name,
 			gitProfile: req.body.gitProfile,
 		});
-		
+
 
 
 		user.save(function(err){
 			if(!err){
 				res.render("welcome");
 				console.log("successfully inserted to DB");
-
-
 			}
 			else{
-				
-				
 				console.log(err);
 				console.log("The err causing long time response from heroku hence causing H12 ");
-
-				
-				
 			}
 		});
 
-		
+
 
 	});
-}
+} 
+postData();
 
-catch (err) {
-	console.error(err);
-	process.exit(1);
-}
+// catch (err) {
+// 	console.error(err);
+// 	process.exit(1);
+// }
 
 
 
