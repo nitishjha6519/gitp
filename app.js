@@ -4,16 +4,15 @@ const bodyParser= require("body-parser");
 require('dotenv').config();
 const URL = process.env.DATABASE_URL;
 
-try{
-mongoose.connect(URL,{
+const mongoConnect=async function(){
+	await mongoose.connect(URL,{
     useUnifiedTopology: true,
     useNewUrlParser: true
   });
   console.log('MongoDB is Connected...');
-} catch (err) {
-  console.error(err);
-  process.exit(1);
 }
+mongoConnect();
+
 
 const collabShipSchema= new mongoose.Schema({
 	projectName: String,
@@ -80,8 +79,8 @@ const postData= async function(){
 		});
 
 
-
-		user.save(function(err){
+const dataSave= async function(){
+		await user.save(function(err){
 			if(!err){
 				res.render("welcome");
 				console.log("successfully inserted to DB");
@@ -93,7 +92,8 @@ const postData= async function(){
 		});
 
 
-
+}
+dataSave();
 	});
 } 
 postData();
