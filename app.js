@@ -43,8 +43,6 @@ var arr=[];
 const signups=mongoose.model("signups",signupsSchema );   //collections called nameEmail
 var signupsArr=[];
 
-
-
 boxes.find(function(err,docs){ 
 	if(err){
 		console.log(err);
@@ -56,6 +54,7 @@ boxes.find(function(err,docs){
 	console.log(arr);
 // console.log(docs);
 });
+
 
 
 
@@ -77,7 +76,7 @@ const postData= async function(){
 
 // try{
 
-	app.post("/apply", function(req,res){
+	await app.post("/apply", function(req,res){
 		var userName= req.body.name;
 
 
@@ -110,6 +109,7 @@ postData();
 // 	console.error(err);
 // 	process.exit(1);
 // }
+
 
 
 
