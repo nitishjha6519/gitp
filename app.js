@@ -2,7 +2,7 @@ const express=require("express");
 const mongoose=require("mongoose");
 const bodyParser= require("body-parser");
 require('dotenv').config();
-const URL = process.env.DATABASE_URL;
+const URL = process.env.URL;
 
 const mongoConnect=async function(){
 	try{
